@@ -1,29 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-
-  <title>TIC-TAC-TOE</title>
-  <style>
-    .main {
-      margin-left: 500px;
-      margin-top: 50px;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
+<title>TIC-TAC-TOE</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+  #supermain
+  {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #cont
+  {
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+      .main {
+        margin-top: 10px;
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction: column;
       width: 300px;
       height: 300px;
       border: solid blue 5px;
       border-radius: 20px;
+      justify-content: center;
     }
-
     #element1 {
 
       border: solid red 5px;
@@ -89,8 +95,8 @@
     }
 
     #button {
-      margin-left: 610px;
-      margin-top: 10px;
+      margin-top: 362px;
+      margin-left: -180px;
       border: solid blue 5px;
       border-radius: 10px;
       width: 80px;
@@ -99,9 +105,9 @@
     }
 
     #display {
+      margin-top: 316px;
+      margin-left: -293px;
       text-align: center;
-      margin-left: 512px;
-      margin-top: 7px;
       border: solid blue 5px;
       border-radius: 10px;
       width: 281px;
@@ -109,26 +115,30 @@
       font-size: 25px;
       color: blue;
     }
-  </style>
+ </style>
 </head>
-
 <body>
+      
   <h1 style="text-align: center; color: lawngreen;" >Tathagata's TIC_TAC_TOE</h1>
+  <div id="supermain">
+  <div id="cont">
   <div class="main">
-    <div id="element1" onclick="fill1()" style="font-size: 60px; text-align: center; color: coral;"> </div>
-    <div id="element2" onclick="fill2()" style="font-size: 60px; text-align: center; color: coral;"> </div>
-    <div id="element3" onclick="fill3()" style="font-size: 60px; text-align: center; color: coral;"> </div>
-    <div id="element4" onclick="fill4()" style="font-size: 60px; text-align: center; color: coral;"> </div>
-    <div id="element5" onclick="fill5()" style="font-size: 60px; text-align: center; color: coral;"> </div>
-    <div id="element6" onclick="fill6()" style="font-size: 60px; text-align: center; color: coral;"> </div>
-    <div id="element7" onclick="fill7()" style="font-size: 60px; text-align: center; color: coral;"> </div>
-    <div id="element8" onclick="fill8()" style="font-size: 60px; text-align: center; color: coral;"> </div>
-    <div id="element9" onclick="fill9()" style="font-size: 60px; text-align: center; color: coral;"> </div>
+    <div id="element1" onclick="fill1()" style="font-size: 60px; text-align: center; color: coral;">1</div>
+    <div id="element2" onclick="fill2()" style="font-size: 60px; text-align: center; color: coral;">2</div>
+    <div id="element3" onclick="fill3()" style="font-size: 60px; text-align: center; color: coral;">3</div>
+    <div id="element4" onclick="fill4()" style="font-size: 60px; text-align: center; color: coral;">4</div>
+    <div id="element5" onclick="fill5()" style="font-size: 60px; text-align: center; color: coral;">5</div>
+    <div id="element6" onclick="fill6()" style="font-size: 60px; text-align: center; color: coral;">6</div>
+    <div id="element7" onclick="fill7()" style="font-size: 60px; text-align: center; color: coral;">7</div>
+    <div id="element8" onclick="fill8()" style="font-size: 60px; text-align: center; color: coral;">8</div>
+    <div id="element9" onclick="fill9()" style="font-size: 60px; text-align: center; color: coral;">9</div>
   </div>
   <div id="display"></div>
-  <button id="button" onclick="reset()">RESET</button>
-  <script>
-    let check = [2, 2, 2, 2, 2, 2, 2, 2, 2];
+    <div><button id="button" onclick="reset()">RESET</button></div>
+    </div>
+  </div>
+            <script>
+              let check = [2, 2, 2, 2, 2, 2, 2, 2, 2];
     let count = 0;
     let i = 0;
     let j = 0;
@@ -380,18 +390,11 @@
         document.getElementById(aru[index]).innerHTML = "";
       }
     }
-
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-    crossorigin="anonymous"></script>
-
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-    -->
+    </script>
 </body>
-
 </html>
+
+
+
+
+
